@@ -1,9 +1,11 @@
 import Banner from "../components/Banner/Banner";
+import Menu from "../components/Menu/Menu";
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner />
+            <Menu />
         </div>
     )
 }
