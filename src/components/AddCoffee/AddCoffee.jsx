@@ -1,5 +1,5 @@
 const AddCoffee = () => {
-    const handleLogin = (event) => {
+    const handleAddCoffee = (event) => {
 
     }
     return (
@@ -10,36 +10,71 @@ const AddCoffee = () => {
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                     The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here'.
                 </p>
-                <form className="space-y-4">
+                <form onSubmit={handleAddCoffee} className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block mb-1 font-medium">Name</label>
-                            <input type="text" placeholder="Enter coffee name" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Enter coffee name"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">Chef</label>
-                            <input type="text" placeholder="Enter coffee chef" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">chef</label>
+                            <input
+                                type="text"
+                                name="chef"
+                                placeholder="Enter coffee chef"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">Supplier</label>
-                            <input type="text" placeholder="Enter coffee supplier" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">supplier</label>
+                            <input
+                                type="text"
+                                name="supplier"
+                                placeholder="Enter coffee supplier"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">Taste</label>
-                            <input type="text" placeholder="Enter coffee taste" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">taste</label>
+                            <input
+                                type="text"
+                                name="taste"
+                                placeholder="Enter coffee taste"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">Category</label>
-                            <input type="text" placeholder="Enter coffee category" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">category</label>
+                            <input
+                                type="text"
+                                name="category"
+                                placeholder="Enter coffee category"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">Details</label>
-                            <input type="text" placeholder="Enter coffee details" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                            <label className="block mb-1 font-medium">details</label>
+                            <input
+                                type="text"
+                                name="details"
+                                placeholder="Enter coffee details"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
                         </div>
                     </div>
                     <div>
-                        <label className="block mb-1 font-medium">Photo</label>
-                        <input type="text" placeholder="Enter photo URL" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                        <label className="block mb-1 font-medium">photo</label>
+                        <input
+                            type="text"
+                            name="photo"
+                            placeholder="Enter photo URL"
+                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                        />
                     </div>
                     <button
                         type="submit"
