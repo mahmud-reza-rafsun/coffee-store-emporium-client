@@ -1,10 +1,47 @@
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
+import { IoTrashOutline } from "react-icons/io5";
+import { MdEdit } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const CoffeeCard = ({ coffee }) => {
-    const { name, price, supplier, taste, category, details, photo } = coffee;
+    const coffeeData = coffee;
+    const [load, setLoad] = useState(coffeeData);
+    const { _id, name, price, category, photo } = coffeeData;
+    const handleDelete = (_id) => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: `You won't be able to revert this ${name}`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/coffee/${_id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: `Your ${name} has been deleted.`,
+                            icon: "success"
+                        });
+                        const deletedCoffee = load.filter((coffee) => coffee._id !== _id)
+                        setLoad(deletedCoffee);
+                    })
+            }
+        });
+    }
     return (
-        <div className="w-full bg-[#F8F7F4] rounded-lg shadow-md p-4 flex items-center gap-4">
+        <div className="w-full bg-black/30 backdrop-blur-md text-white rounded-lg shadow-md p-4 flex items-center gap-4">
 
             <img src={photo} alt="Black Coffee" className="w-28 h-36 object-cover rounded-md" />
-
 
             <div className="flex-1">
                 <p><span className="font-semibold">Name: </span>{name}</p>
@@ -13,20 +50,24 @@ const CoffeeCard = ({ coffee }) => {
             </div>
 
             <div className="flex flex-col items-center gap-2">
-                <button className="bg-[#C7A17A] hover:bg-[#b18c66] text-white p-1.5 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </button>
-                <button className="bg-gray-700 hover:bg-gray-800 text-white p-1.5 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2m3 14H8a2 2 0 01-2-2V7h10v10a2 2 0 01-2 2z" />
-                    </svg>
-                </button>
-                <button className="bg-red-500 hover:bg-red-600 text-white p-1.5 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                <Link to={`/coffee-details/${_id}`}>
+                    <button className="bg-[#C7A17A] hover:bg-[#b18c66] text-white p-1.5 rounded">
+                        <span>
+                            <FaEye />
+                        </span>
+                    </button>
+                </Link>
+                <Link to={`/update-coffee/${_id}`}>
+                    <button className="bg-gray-700 hover:bg-gray-800 text-white p-1.5 rounded">
+                        <span>
+                            <MdEdit />
+                        </span>
+                    </button>
+                </Link>
+                <button onClick={() => handleDelete(_id)} className="bg-red-500 hover:bg-red-600 text-white p-1.5 rounded">
+                    <span>
+                        <IoTrashOutline />
+                    </span>
                 </button>
             </div>
         </div>

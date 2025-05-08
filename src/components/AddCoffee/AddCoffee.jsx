@@ -1,3 +1,4 @@
+import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const AddCoffee = () => {
@@ -35,13 +36,16 @@ const AddCoffee = () => {
         console.log(coffeeDetails);
     }
     return (
-        <div className="py-10 mt-8">
-            <div className="p-5 ml-10">
-                <Link to="/">Back To Home</Link>
+        <div className="py-10 lg:py-14 mt-5 bg-coffee-dark" >
+            <div className="p-5 ml-5 lg:ml-10 text-white">
+                <Link to="/" className="mt-4 lg:mt-0 flex items-center border w-fit p-2 rounded-md  duration-300 border-none hover:bg-yellow-800 gap-3">
+                    <IoArrowBackOutline />
+                    Back To Home
+                </Link>
             </div>
-            <div className="max-w-4xl mx-auto p-8 bg-gray-100 rounded-lg shadow-md">
-                <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">Add New Coffee</h2>
-                <p className="text-center text-gray-600 mb-8">
+            <div className="max-w-4xl mx-auto p-8 bg-black/30 backdrop-blur-md text-white rounded-lg shadow-md">
+                <h2 className="text-2xl lg:text-3xl font-semibold text-center mb-4">Add New Coffee</h2>
+                <p className="text-center mb-8">
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                     The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here'.
                 </p>
@@ -53,7 +57,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="name"
                                 placeholder="Enter coffee name"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none bg-black/30 border-gray-600 focus:ring focus:border-blue-300"
                             />
                         </div>
                         <div>
@@ -62,7 +66,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="supplier"
                                 placeholder="Enter coffee supplier"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none bg-black/30 border-gray-600 focus:ring focus:border-blue-300"
                             />
                         </div>
                         <div>
@@ -71,7 +75,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="price"
                                 placeholder="Enter coffee chef"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none bg-black/30 border-gray-600 focus:ring focus:border-blue-300"
                             />
                         </div>
                         <div>
@@ -80,7 +84,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="taste"
                                 placeholder="Enter coffee taste"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border rounded-md bg-black/30 border-gray-600 focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
                         <div>
@@ -89,7 +93,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="category"
                                 placeholder="Enter coffee category"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border rounded-md bg-black/30 border-gray-600 focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
                         <div>
@@ -98,7 +102,7 @@ const AddCoffee = () => {
                                 type="text"
                                 name="details"
                                 placeholder="Enter coffee details"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                                className="w-full px-4 py-2 border bg-black/30 border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
                     </div>
@@ -108,7 +112,7 @@ const AddCoffee = () => {
                             type="text"
                             name="photo"
                             placeholder="Enter photo URL"
-                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full px-4 py-2 border bg-black/30 border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
                     <button

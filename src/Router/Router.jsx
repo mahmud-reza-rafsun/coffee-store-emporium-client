@@ -3,6 +3,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home";
 import AddCoffee from "../components/AddCoffee/AddCoffee";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
+import CoffeeDetails from "../components/CoffeeDetails/CoffeeDetails";
 
 const router = createBrowserRouter([
     {
@@ -13,9 +14,9 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
                 loader: async () => {
-                    const coffeeData = await fetch('http://localhost:5000/coffee');
-                    const coffee = await coffeeData.json();
-                    return coffee;
+                    const coffee = await fetch('http://localhost:5000/coffee');
+                    const resCoffee = await coffee.json();
+                    return resCoffee;
                 }
             },
             {
@@ -23,8 +24,22 @@ const router = createBrowserRouter([
                 element: <AddCoffee />
             },
             {
-                path: '/update-coffee',
-                element: <UpdateCoffee />
+                path: '/update-coffee/:id',
+                element: <UpdateCoffee />,
+                loader: async ({ params }) => {
+                    const coffee = await fetch(`http://localhost:5000/coffee/${params.id}`);
+                    const resCoffee = await coffee.json();
+                    return resCoffee;
+                }
+            },
+            {
+                path: '/coffee-details/:id',
+                element: <CoffeeDetails />,
+                loader: async ({ params }) => {
+                    const coffee = await fetch(`http://localhost:5000/coffee/${params.id}`);
+                    const resCoffee = await coffee.json();
+                    return resCoffee;
+                }
             }
         ]
     }
