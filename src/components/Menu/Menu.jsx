@@ -5,10 +5,7 @@ import Glass from "../../assets/images/icons/4.png"
 
 const Menu = () => {
     return (
-        <div className="overflow-hidden antialiased text-black py-8">
-            <div className="fixed inset-0 -z-10">
-                <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
-            </div>
+        <div className="text-black py-8">
             <div className="px-5 lg:max-w-4xl mx-auto">
                 <div className="flex items-center flex-col lg:flex-row gap-5 justify-between text-black">
                     <div className="space-y-2 w-full sm:w-full md:w-[48%] lg:w-[23%] bg-gray-100 bg-transparent/10 p-4 rounded">

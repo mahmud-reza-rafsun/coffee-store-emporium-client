@@ -5,13 +5,13 @@ const AddCoffee = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const chef = form.chef.value;
+        const price = form.price.value;
         const supplier = form.supplier.value;
         const taste = form.taste.value;
         const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
-        const coffeeDetails = { name, chef, supplier, taste, category, details, photo }
+        const coffeeDetails = { name, price, supplier, taste, category, details, photo }
         fetch('http://localhost:5000/coffee', {
             method: 'POST',
             headers: {
@@ -57,20 +57,20 @@ const AddCoffee = () => {
                             />
                         </div>
                         <div>
-                            <label className="block mb-1 font-medium">chef</label>
-                            <input
-                                type="text"
-                                name="chef"
-                                placeholder="Enter coffee chef"
-                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-                            />
-                        </div>
-                        <div>
                             <label className="block mb-1 font-medium">supplier</label>
                             <input
                                 type="text"
                                 name="supplier"
                                 placeholder="Enter coffee supplier"
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-1 font-medium">price</label>
+                            <input
+                                type="text"
+                                name="price"
+                                placeholder="Enter coffee chef"
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                             />
                         </div>
