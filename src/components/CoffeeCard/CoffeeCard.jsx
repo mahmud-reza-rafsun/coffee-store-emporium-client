@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { IoTrashOutline } from "react-icons/io5";
 import { MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee }) => {
-    const coffeeData = coffee;
-    const [load, setLoad] = useState(coffeeData);
-    const { _id, name, price, category, photo } = coffeeData;
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
+    const { _id, name, price, category, photo } = coffee;
     const handleDelete = (_id) => {
         console.log(_id);
         Swal.fire({
@@ -27,13 +24,15 @@ const CoffeeCard = ({ coffee }) => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: `Your ${name} has been deleted.`,
-                            icon: "success"
-                        });
-                        const deletedCoffee = load.filter((coffee) => coffee._id !== _id)
-                        setLoad(deletedCoffee);
+                        if (data) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: `Your ${name} has been deleted.`,
+                                icon: "success"
+                            });
+                            const remainingCoffee = coffees.filter(coffee => coffee._id !== _id);
+                            setCoffees(remainingCoffee);
+                        }
                     })
             }
         });

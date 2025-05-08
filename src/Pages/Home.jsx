@@ -1,11 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
+import Footer from "../components/Footer/Footer";
 import Menu from "../components/Menu/Menu";
 import CoffeeCard from "../components/CoffeeCard/CoffeeCard";
 import { BsCupHot } from "react-icons/bs";
+import { useState } from "react";
 
 const Home = () => {
     const coffeeData = useLoaderData();
+    const [coffees, setCoffees] = useState(coffeeData);
     return (
         <div >
             <div>
@@ -25,11 +28,12 @@ const Home = () => {
                     </div>
                     <div className="px-5 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-5">
                         {
-                            coffeeData.map((coffee) => <CoffeeCard key={coffee?._id} coffee={coffee} />)
+                            coffees.map((coffee) => <CoffeeCard key={coffee?._id} coffee={coffee} coffees={coffees} setCoffees={setCoffees} />)
                         }
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
