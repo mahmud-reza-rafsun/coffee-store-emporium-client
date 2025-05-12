@@ -4,6 +4,9 @@ import Home from "../Pages/Home";
 import AddCoffee from "../components/AddCoffee/AddCoffee";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import CoffeeDetails from "../components/CoffeeDetails/CoffeeDetails";
+import SignUp from "../components/SignUp/SignUp";
+import SignIn from "../components/SignIn/SignIn";
+import UsersInfo from "../UsersInfo/UsersInfo";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +43,19 @@ const router = createBrowserRouter([
                     const resCoffee = await coffee.json();
                     return resCoffee;
                 }
+            },
+            {
+                path: '/signUp',
+                element: <SignUp />
+            },
+            {
+                path: '/signIn',
+                element: <SignIn />
+            },
+            {
+                path: '/profile',
+                element: <UsersInfo />,
+                loader: () => fetch('http://localhost:5000/users'),
             }
         ]
     }

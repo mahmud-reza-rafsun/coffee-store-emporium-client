@@ -5,7 +5,7 @@ import Glass from "../../assets/images/icons/4.png"
 
 const Menu = () => {
     return (
-        <div className="bg-gradient-to-r from-[#7d5a50] via-[#a47148] to-[#d9b08c]  py-8">
+        <div className="bg-gradient-to-r from-[#7d5a50] via-[#a47148] to-[#d9b08c] py-8">
             <div className="px-5 lg:max-w-4xl mx-auto">
                 <div className="flex items-center flex-col lg:flex-row gap-5 justify-between text-black">
                     <div className="space-y-2 w-full sm:w-full md:w-[48%] lg:w-[23%] bg-gray-100 text-white bg-transparent/10 p-4 rounded">

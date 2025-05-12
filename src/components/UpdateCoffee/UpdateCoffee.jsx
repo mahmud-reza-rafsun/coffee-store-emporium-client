@@ -37,9 +37,9 @@ const UpdateCoffee = () => {
         console.log(coffeeDetails);
     }
     return (
-        <div className="py-10 lg:py-14 mt-5 bg-coffee-dark" >
+        <div className="pb-10 bg-coffee-dark" >
             <div className="p-5 ml-5 lg:ml-10 text-white">
-                <Link to="/" className="mt-4 lg:mt-0 flex items-center border w-fit p-2 rounded-md  duration-300 border-none hover:bg-yellow-800 gap-3">
+                <Link to="/" className="flex items-center border w-fit p-2 rounded-md  duration-300 border-none hover:bg-yellow-800 gap-3">
                     <IoArrowBackOutline />
                     Back To Home
                 </Link>
