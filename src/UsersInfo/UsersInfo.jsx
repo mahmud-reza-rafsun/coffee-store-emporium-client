@@ -1,4 +1,4 @@
-import { useState } from "react";
+	import { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -46,7 +46,7 @@ const UsersInfo = () => {
                         <thead>
                             <tr className="text-white text-lg">
                                 <th>Name</th>
-                                <th>Emal</th>
+                                <th>Email</th>
                                 <th>creation Time</th>
                                 <th>Action</th>
                             </tr>

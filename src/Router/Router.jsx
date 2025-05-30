@@ -17,7 +17,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
                 loader: async () => {
-                    const coffee = await fetch('http://localhost:5000/coffee');
+                    const coffee = await fetch('https://coffee-store-emporium-server.vercel.app');
                     const resCoffee = await coffee.json();
                     return resCoffee;
                 }
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                 path: '/update-coffee/:id',
                 element: <UpdateCoffee />,
                 loader: async ({ params }) => {
-                    const coffee = await fetch(`http://localhost:5000/coffee/${params.id}`);
+                    const coffee = await fetch(`https://coffee-store-emporium-server.vercel.app/${params.id}`);
                     const resCoffee = await coffee.json();
                     return resCoffee;
                 }
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                 path: '/coffee-details/:id',
                 element: <CoffeeDetails />,
                 loader: async ({ params }) => {
-                    const coffee = await fetch(`http://localhost:5000/coffee/${params.id}`);
+                    const coffee = await fetch(`https://coffee-store-emporium-server.vercel.app/${params.id}`);
                     const resCoffee = await coffee.json();
                     return resCoffee;
                 }

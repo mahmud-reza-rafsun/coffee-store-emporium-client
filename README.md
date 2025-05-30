@@ -1,2 +1,2 @@
 # Coffee Store Emporium.
-http://localhost:5000/coffee
+https://coffee-store-emporium-server.vercel.app
